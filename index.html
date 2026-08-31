@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LKLI - Desenvolvimento & Inovação" />
+    <title>LKLI - Desenvolvimento & Inovação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="LKLI Desenvolvimento & Inovação">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/scania_symbol.svg" alt="" />
+        </span>
+        <span class="brand-text">
+          <strong>Desenvolvimento & Inovação</strong>
+          <small>Portal institucional interno</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Navegacao principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#time">Time</a>
+        <a href="#historico">História</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="#links">Solicitações</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-media">
+          <video
+            id="heroVideo"
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster=""
+            aria-hidden="true"
+          >
+            <source src="assets/background_hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-fallback" aria-hidden="true">
+            <div class="fallback-grid"></div>
+            <div class="fallback-orb orb-a"></div>
+            <div class="fallback-orb orb-b"></div>
+          </div>
+          <div class="hero-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="hero-content">
+          <div class="eyebrow">LKLI | Desenvolvimento & Inovação</div>
+          <h1>Transformando oportunidades em valor por meio da Inovação.</h1>
+          <p>
+            Um ponto central para conhecer a area, acionar o time, acompanhar o processo e navegar
+            pelas iniciativas de desenvolvimento, automacao, dados e capacitacao.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#links">Abrir solicitacao</a>
+            <a class="button button-secondary" href="#time">Conhecer o time</a>
+            <a class="button button-ghost" href="#processo">Ver processo</a>
+          </div>
+          <div class="hero-metrics" aria-label="Resumo da area">
+            <div><strong>5</strong><span>pilares de atuacao</span></div>
+            <div><strong>16</strong><span>colaboradores iniciais</span></div>
+            <div><strong>8</strong><span>etapas do processo</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tech-section" id="sobre">
+        <div class="section-heading">
+          <span>Sobre a area</span>
+          <h2>Uma frente corporativa para transformar demanda em valor prático.</h2>
+        </div>
+        <p class="section-copy">
+          O time de Desenvolvimento & Inovação atua na criacao de solucoes digitais, automacoes,
+          dashboards, melhorias de processos, iniciativas de capacitacao e apoio a novas ideias.
+          Nosso objetivo e transformar oportunidades em solucoes praticas que gerem valor para a
+          operacao e para o negocio.
+        </p>
+        <div class="statement-grid" id="statements"></div>
+      </section>
+
+      <section class="section tech-section" id="pilares">
+        <div class="section-heading">
+          <span>Pilares de atuacao</span>
+          <h2>Frentes que conectam cultura, dados, tecnologia e ecossistema.</h2>
+        </div>
+        <div class="pillar-grid" id="pillars"></div>
+      </section>
+
+      <section class="section" id="links">
+        <div class="section-heading">
+          <span>Links rapidos</span>
+          <h2>Abertura de solicitacoes e canais de acesso.</h2>
+        </div>
+        <div class="quick-links" id="quickLinks"></div>
+      </section>
+
+      <section class="section" id="time">
+        <div class="section-heading">
+          <span>Time e organograma</span>
+          <h2>Conheca o time LKLI com cards interativos e modal ampliado.</h2>
+        </div>
+        <div class="team-grid" id="teamGrid"></div>
+      </section>
+
+      <section class="section" id="historico">
+        <div class="section-heading">
+          <span>Historia do time</span>
+          <h2>Uma evolucao orientada por necessidade, dados e colaboracao.</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="section" id="processo">
+        <div class="section-heading">
+          <span>Processo de Inovação</span>
+          <h2>Um fluxo claro para classificar, priorizar e implementar demandas.</h2>
+        </div>
+        <div class="process-stepper" id="processStepper"></div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-heading">
+          <span>FAQ</span>
+          <h2>Duvidas frequentes sobre abertura, acompanhamento e tecnologias.</h2>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </section>
+    </main>
+
+    <dialog class="team-modal" id="teamModal" aria-labelledby="teamModalTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar modal">×</button>
+      <div class="modal-body">
+        <div class="modal-photo" id="modalPhoto"></div>
+        <div class="modal-content">
+          <p class="modal-area" id="modalArea"></p>
+          <h3 id="teamModalTitle"></h3>
+          <p class="modal-role" id="modalRole"></p>
+          <p class="modal-bio" id="modalBio"></p>
+          <div class="modal-columns">
+            <div>
+              <h4>Responsabilidades</h4>
+              <ul id="modalResponsibilities"></ul>
+            </div>
+            <div>
+              <h4>Ferramentas</h4>
+              <ul id="modalTools"></ul>
+            </div>
+          </div>
+          <p class="modal-contact" id="modalContact"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
