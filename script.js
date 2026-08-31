@@ -22,8 +22,15 @@ const initials = (name) =>
     .join("")
     .toUpperCase();
 
+const resolveProjectAsset = (path) => {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+
+  const projectBase = new URL("./", document.baseURI);
+  return new URL(path.replace(/^\.?\//, ""), projectBase).href;
+};
+
 const avatarMarkup = (name, photo = "") => photo
-  ? `<div class="avatar"><img src="${photo}" alt="Foto de ${name}" loading="lazy" /></div>`
+  ? `<div class="avatar"><img src="${resolveProjectAsset(photo)}" alt="Foto de ${name}" loading="lazy" /></div>`
   : `<div class="avatar" aria-hidden="true">${initials(name)}</div>`;
 
 function renderStatements() {
