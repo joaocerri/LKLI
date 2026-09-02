@@ -495,6 +495,30 @@ function setupHeader() {
   }, { passive: true });
 }
 
+function setupTheme() {
+  const toggle = $(".theme-toggle");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const applyTheme = (theme, persist = false) => {
+    const isDark = theme === "dark";
+    document.documentElement.dataset.theme = theme;
+    toggle?.setAttribute("aria-pressed", String(isDark));
+    toggle?.setAttribute("aria-label", isDark ? "Ativar modo claro" : "Ativar modo escuro");
+    toggle?.setAttribute("title", isDark ? "Ativar modo claro" : "Ativar modo escuro");
+    if (persist) localStorage.setItem("lkli-theme", theme);
+  };
+
+  applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? "dark" : "light"));
+
+  toggle?.addEventListener("click", () => {
+    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+  });
+
+  systemTheme.addEventListener("change", ({ matches }) => {
+    if (!localStorage.getItem("lkli-theme")) applyTheme(matches ? "dark" : "light");
+  });
+}
+
 renderStatements();
 renderPillars();
 renderQuickLinks();
@@ -505,3 +529,4 @@ renderFaq();
 setupModal();
 setupVideoFallback();
 setupHeader();
+setupTheme();
